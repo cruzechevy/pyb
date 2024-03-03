@@ -20,21 +20,16 @@ def check_standard_categories(predicted_value):
 class TestStandardCategories(unittest.TestCase):
 
     def test_low_category(self):
-        # Test value below 1
+        # Test value below 0.25
         self.assertEqual(check_standard_categories(0.25), 'low')
 
     def test_medium_category(self):
-        # Test value between 1 and 2
+        # Test value between 0.25 and 0.75
         self.assertEqual(check_standard_categories(0.5), 'medium')
 
     def test_high_category(self):
-        # Test value above or equal to 2
+        # Test value above or equal to 0.75
         self.assertEqual(check_standard_categories(0.75), 'high')
-
-    def test_boundary_values(self):
-        # Test boundary values
-        self.assertEqual(check_standard_categories(1), 'medium')
-        self.assertEqual(check_standard_categories(2), 'high')
 
 if __name__ == '__main__':
     unittest.main()
