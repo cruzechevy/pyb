@@ -3,7 +3,7 @@ from typing import IO
 
 def helloworld(output_stream: IO[str]) -> None:
     """
-    Print a hello world message.
+    Print a hello world message to the world of Python.
 
     Args:
         output_stream: Output stream to write the message to.
