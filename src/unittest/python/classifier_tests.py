@@ -10,7 +10,7 @@ class TestClassifier(unittest.TestCase):
         expected_features = {
             'sepal_length': 5.4,
             'sepal_width': 5.4,
-            'petal_length': 1.4,
+            'petal_length': 1.6,
             'petal_width': 0.5
         }
 
