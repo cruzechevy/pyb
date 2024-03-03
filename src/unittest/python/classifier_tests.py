@@ -1,35 +1,24 @@
 import unittest
+from unittest.mock import patch
+from classifier import user_input_features
 
-def check_standard_categories(predicted_value):
-    """
-    Check if a predicted value falls within three standard categories.
+class TestClassifier(unittest.TestCase):
 
-    Args:
-        predicted_value: The predicted value to check.
+    @patch('classifier.st.sidebar.slider', side_effect=lambda name, min_val, max_val, default_val: default_val)
+    def test_user_input_features(self, mock_slider):
+        # Mocking user input for all parameters to their default values
+        expected_features = {
+            'sepal_length': 5.4,
+            'sepal_width': 5.4,
+            'petal_length': 1.4,
+            'petal_width': 0.5
+        }
 
-    Returns:
-        str: The category ('low', 'medium', 'high') the value falls into.
-    """
-    if predicted_value <= 0.25:
-        return 'low'
-    elif predicted_value > 0.25 and predicted_value <= 0.74:
-        return 'medium'
-    else:
-        return 'high'
+        # Call the function
+        features = user_input_features()
 
-class TestStandardCategories(unittest.TestCase):
-
-    def test_low_category(self):
-        # Test value below 0.25
-        self.assertEqual(check_standard_categories(0.25), 'low')
-
-    def test_medium_category(self):
-        # Test value between 0.25 and 0.75
-        self.assertEqual(check_standard_categories(0.5), 'medium')
-
-    def test_high_category(self):
-        # Test value above or equal to 0.75
-        self.assertEqual(check_standard_categories(0.75), 'high')
+        # Assert the expected features
+        self.assertEqual(features.to_dict(), expected_features)
 
 if __name__ == '__main__':
     unittest.main()
