@@ -25,7 +25,7 @@ jobs:
         run: pip install pylint
 
       - name: Run pylint
-run: pylint src/main/python/helloworld.py
+        run: pylint src/main/python/helloworld.py
 
   build_and_test:
     runs-on: ubuntu-latest
