@@ -1,0 +1,33 @@
+running clean
+'build\lib' does not exist -- can't clean it
+'build\bdist.win-amd64' does not exist -- can't clean it
+'build\scripts-3.11' does not exist -- can't clean it
+running sdist
+running egg_info
+creating pyb.egg-info
+writing pyb.egg-info\PKG-INFO
+writing dependency_links to pyb.egg-info\dependency_links.txt
+writing namespace_packages to pyb.egg-info\namespace_packages.txt
+writing top-level names to pyb.egg-info\top_level.txt
+writing manifest file 'pyb.egg-info\SOURCES.txt'
+reading manifest file 'pyb.egg-info\SOURCES.txt'
+writing manifest file 'pyb.egg-info\SOURCES.txt'
+warning: sdist: standard file not found: should have one of README, README.rst, README.txt, README.md
+
+running check
+creating pyb-1.0.dev0
+creating pyb-1.0.dev0\pyb.egg-info
+copying files to pyb-1.0.dev0...
+copying helloworld.py -> pyb-1.0.dev0
+copying setup.py -> pyb-1.0.dev0
+copying pyb.egg-info\PKG-INFO -> pyb-1.0.dev0\pyb.egg-info
+copying pyb.egg-info\SOURCES.txt -> pyb-1.0.dev0\pyb.egg-info
+copying pyb.egg-info\dependency_links.txt -> pyb-1.0.dev0\pyb.egg-info
+copying pyb.egg-info\namespace_packages.txt -> pyb-1.0.dev0\pyb.egg-info
+copying pyb.egg-info\top_level.txt -> pyb-1.0.dev0\pyb.egg-info
+copying pyb.egg-info\zip-safe -> pyb-1.0.dev0\pyb.egg-info
+copying pyb.egg-info\SOURCES.txt -> pyb-1.0.dev0\pyb.egg-info
+Writing pyb-1.0.dev0\setup.cfg
+creating dist
+Creating tar archive
+removing 'pyb-1.0.dev0' (and everything under it)
