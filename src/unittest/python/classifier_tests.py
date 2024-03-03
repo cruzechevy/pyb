@@ -10,9 +10,9 @@ def check_standard_categories(predicted_value):
     Returns:
         str: The category ('low', 'medium', 'high') the value falls into.
     """
-    if predicted_value < 0.25:
+    if predicted_value <= 0.25:
         return 'low'
-    elif predicted_value >= 0.25 and predicted_value < 0.75:
+    elif predicted_value > 0.25 and predicted_value <= 0.74:
         return 'medium'
     else:
         return 'high'
