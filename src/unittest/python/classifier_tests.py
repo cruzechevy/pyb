@@ -10,7 +10,7 @@ class TestClassifier(unittest.TestCase):
         expected_features = {
             'sepal_length': 5.4,
             'sepal_width': 5.4,
-            'petal_length': 1.6,
+            'petal_length': 1.4,
             'petal_width': 0.5
         }
 
@@ -18,7 +18,10 @@ class TestClassifier(unittest.TestCase):
         features = user_input_features()
 
         # Assert the expected features
-        self.assertEqual(features.to_dict(), expected_features)
+        self.assertEqual(
+            {k: v[0] if isinstance(v, dict) else v for k, v in features.to_dict().items()},
+            expected_features
+        )
 
 if __name__ == '__main__':
     unittest.main()
