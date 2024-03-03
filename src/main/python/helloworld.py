@@ -1,9 +1,10 @@
 import sys
+from io import StringIO
 from typing import IO
 
 def helloworld(output_stream: IO[str]) -> None:
     """
-    Print a hello world message to the world of Python.
+    Print a hello world message.
 
     Args:
         output_stream: Output stream to write the message to.
@@ -17,7 +18,6 @@ def test_helloworld() -> None:
     """
     Test the helloworld function.
     """
-    from io import StringIO
     output = StringIO()
     helloworld(output)
     assert output.getvalue() == "Hello world of Python\n"
