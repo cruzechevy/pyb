@@ -1,18 +1,26 @@
-"""
-This is a simple module to demonstrate a hello world function in Python.
-"""
-
 import sys
+from typing import IO
 
-def helloworld(out):
+def helloworld(output_stream: IO[str]) -> None:
     """
     Print a hello world message.
 
     Args:
-        out: Output stream to write the message to.
+        output_stream: Output stream to write the message to.
     """
-    out.write("Hello world of Python\n")
+    try:
+        output_stream.write("Hello world of Python\n")
+    except AttributeError:
+        print("Invalid output stream provided.")
 
-# Call the function with a file object
-helloworld(sys.stdout)
+def test_helloworld() -> None:
+    """
+    Test the helloworld function.
+    """
+    from io import StringIO
+    output = StringIO()
+    helloworld(output)
+    assert output.getvalue() == "Hello world of Python\n"
 
+if __name__ == "__main__":
+    helloworld(sys.stdout)
