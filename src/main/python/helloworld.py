@@ -1,3 +1,7 @@
+"""
+This module demonstrates a simple hello world function in Python.
+"""
+
 import sys
 from io import StringIO
 from typing import IO
